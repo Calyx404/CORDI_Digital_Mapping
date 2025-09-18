@@ -5,5 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
   </head>
-  <body></body>
+  <body>
+    <!-- For local testing -->
+    <script src="map-config.js"></script>
+
+    <!-- For deployment -->
+    <script>
+      const script = document.createElement("script");
+      script.src = `https://maps.googleapis.com/maps/api/js?key=${MAPS_API_KEY}&callback=initMap`;
+      script.async = true;
+      script.defer = true;
+      document.head.appendChild(script);
+    </script>
+  </body>
 </html>
